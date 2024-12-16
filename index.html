@@ -164,6 +164,39 @@
      </section>
 
 
+
+     <!--js part to send a post request to the /api/contact endpoitn-->
+     <script>
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+        
+            const formData = {
+                name: document.getElementById('name').value,
+                number: document.getElementById('number').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            };
+        
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+        
+                const result = await response.json();
+        
+                if (result.success) {
+                    alert('Form submitted successfully!');
+                    document.getElementById('contact-form').reset();
+                } else {
+                    alert(result.error || 'Form submission failed.');
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again later.');
+            }
+        });
+        </script>
     
         <!-- Contact Info Section -->
         <div class="contact-info">
