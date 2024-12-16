@@ -58,21 +58,7 @@
         <nav>
             <h1 class="logo">BIBEK<span class="dots"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span></h1>
 
-                <!--Social media icons or links-->
-                    <div class="social-media-container">
-                        <a href="https://www.facebook.com/bibek.contact1" target="_blank" class="social-icon facebook">
-                            <i class="fab fa-facebook"></i>
-
-                        <a href="https://www.instagram.com/bibek.contact1" target="_blank" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/bibek-contact1" target="_blank" class="social-icon linkedin">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/bibek-contact1" target="_blank" class="social-icon github">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
+                
 
             <!-- Hamburger Button for Mobile -->
                 <div class="navbar-toggle" onclick="toggleNavbar()">
@@ -98,13 +84,34 @@
                 I am a Data Analyst and Data Visualizer with a deep understanding of data visualization, market research, and strategic decision-making. I assist businesses in crafting effective sales and distribution strategies to drive success.
             </p>
             <button class="cv-btn" id="downloadCvBtn">Download CV</button>
-
-            
-
         </div>
+
         <div class="image-container">
             <img src="profile.JPG" alt="Bibek Sunar">
         </div>
+
+
+        <!--Social media icons or links-->
+
+        <div class="social-media-container">
+            <h2>Connect with Me</h2>
+
+            <a href="https://www.facebook.com/bibek.contact1" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook"></i>
+
+            <a href="https://www.instagram.com/bibek.contact1" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bibek-contact1" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/bibek-contact1" target="_blank" class="social-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+
+
+        </div>
+
     </section>
 
     <!-- Services Section -->
@@ -189,6 +196,20 @@
             const navLinks = document.querySelector('nav ul');
             navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide the navbar
         }
+
+        document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function () {
+        // Remove 'active' class from all links
+        document.querySelectorAll('nav ul li a').forEach(item => {
+            item.classList.remove('active');
+        });
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+    });
+});
+
+
+
         document.addEventListener('DOMContentLoaded', () => {
         // Typing Effect
         const typingTextElement = document.querySelector('.typing-text');
