@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibek Sunar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Typing Animation */
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #00ff00;
+            animation: typing 3s steps(20, end) infinite, blink 0.7s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            50% {
+                width: 100%;
+            }
+            100% {
+                width: 0;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Image Lighting Effect */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <h1 class="logo">BIBEK<span class="dots"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span></h1>
+
+                
+
+            <!-- Hamburger Button for Mobile -->
+                <div class="navbar-toggle" onclick="toggleNavbar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            <ul class="nav-items" id="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Bibek Sunar</h1>
+            <h2><span class="highlight typing-text">I am a Data Analyst & Business Analyst</span></h2>
+            <p>
+                I am a Data Analyst and Data Visualizer with a deep understanding of data visualization, market research, and strategic decision-making. I assist businesses in crafting effective sales and distribution strategies to drive success.
+            </p>
+            <button class="cv-btn" id="downloadCvBtn">Download CV</button>
+        </div>
+
+        <div class="image-container">
+            <img src="C:\Users\ADMIN\Desktop\Portfolio\contents\profile.JPG" alt="Bibek Sunar">
+        </div>
+
+
+        <!--Social media icons or links-->
+
+        <div class="social-media-container">
+            <h2>Connect with Me</h2>
+
+            <a href="https://www.facebook.com/bibek.contact1" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook"></i>
+
+            <a href="https://www.instagram.com/bibek.contact1" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bibek-contact1" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/bibek-contact1" target="_blank" class="social-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+
+
+        </div>
+
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>My Services</h2>
+        <div class="service">
+            <h3>Data Analysis</h3>
+            <p>Analyzing data to uncover trends and provide actionable insights for businesses.</p>
+        </div>
+        <div class="service">
+            <h3>Data Visualization</h3>
+            <p>Creating intuitive charts and dashboards to represent complex data.</p>
+        </div>
+        <div class="service">
+            <h3>Market Research</h3>
+            <p>Providing research-based strategies to boost business performance.</p>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>With a degree in BBA and experience as a Data Analyst, I specialize in data visualization, market research, and strategy creation.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <p>Coming soon...</p>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Example HTML form -->
+<form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <input type="tel" id="phone" placeholder="Your Phone Number" />
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div id="status"></div>
+  
+
+
+
+     <!--js part to send a post request to the /api/contact endpoitn-->
+     <script>
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+      
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const message = document.getElementById('message').value;
+      
+          // Send the form data to the backend API
+          const response = await fetch('/api/submitForm', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, phone, message }),
+          });
+      
+          const result = await response.json();
+          const statusDiv = document.getElementById('status');
+          
+          if (result.success) {
+            statusDiv.textContent = 'Form submitted successfully!';
+            statusDiv.style.color = 'green';
+            
+            // Clear the form
+            document.getElementById('contactForm').reset();
+          } else {
+            statusDiv.textContent = 'Error submitting form: ' + result.message;
+            statusDiv.style.color = 'red';
+          }
+        });
+      </script>
+      
+    
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <div class="contact-left">
+                <p><strong>Location:</strong> <a href="https://www.google.com/maps/place//@27.6258753,84.3930334,278m/data=!3m1!1e3!4m3!1m2!2m1!1sBharatpur-6+Chitwan+Geetanagar+44200?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Bharatpur-6, Chitwan, Geetanagar, 44200</a></p>
+                <p><strong>Postal Code:</strong> 44200</p>
+            </div>
+            
+            <div class="contact-right">
+                <p><strong>Phone:</strong>
+                    <a href="tel:+9779845900042">+9779845900042</a>, 
+                    <a href="tel:+9779709744524">+9779709744524</a></p>
+                <p><strong>Email:</strong> <a href="mailto:bibek.contact1@gmail.com">bibek.contact1@gmail.com</a></p>
+            </div>
+        </div>
+    
+
+        
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Bibek Sunar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+
+function toggleNavbar() {
+    const navbar = document.querySelector(".nav-items");
+    const toggleButton = document.querySelector(".navbar-toggle");
+
+    navbar.classList.toggle("active");
+    toggleButton.classList.toggle("active");
+}
+
+
+    // Select all navigation links
+const navLinks = document.querySelectorAll('.nav-items a');
+
+// Function to handle the active class toggle
+function setActiveLink(event) {
+    // Remove the 'active' class from all links
+    navLinks.forEach((link) => link.classList.remove('active'));
+
+    // Add the 'active' class to the clicked link
+    event.target.classList.add('active');
+}
+
+// Attach click event listeners to each navigation link
+navLinks.forEach((link) => {
+    link.addEventListener('click', setActiveLink);
+});
+
+
+
+
+
+    
+        document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function () {
+        // Remove 'active' class from all links
+        document.querySelectorAll('nav ul li a').forEach(item => {
+            item.classList.remove('active');
+        });
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+    });
+});
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+        // Typing Effect
+        const typingTextElement = document.querySelector('.typing-text');
+        const textToType = "I am a Data Analyst & Business Analyst"; // Text to display
+        let index = 0;
+
+        function typeText() {
+            typingTextElement.textContent = textToType.slice(0, index);
+            index++;
+            if (index > textToType.length) {
+                setTimeout(() => { index = 0; }, 1000); // Pause before restart
+            }
+            setTimeout(typeText, 150); // Typing speed
+        }
+
+        typeText(); // Start the typing effect
+
+        // Button Click - Download CV
+        const downloadCvBtn = document.getElementById('downloadCvBtn');
+        downloadCvBtn.addEventListener('click', () => {
+            alert('Your CV is being downloaded!');
+            const link = document.createElement('a');
+            link.href = 'CV.pdf'; // Replace with actual CV file path
+            link.download = 'cv.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }); 
+
+
+    </script>
+</body>
+</html>
