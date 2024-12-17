@@ -1,0 +1,601 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Darker background for better contrast */
+    color: #f5f5f5; /* Lighter text color for readability */
+}
+
+/* Navbar */
+header {
+    background: #111; /* Slightly darker navbar */
+    padding: 0px 00px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    
+    
+}
+
+
+.logo {
+    font-size: 32px; /* Adjust the font size for logo */
+    font-weight: bold;
+    color: #4CAF50;
+    position: relative;
+    display: inline-flex;
+    margin-left: 20px;
+    align-items: center; /* Aligns the dots vertically with the logo */
+}
+
+.dots {
+    display: inline-flex; /* Makes sure dots are aligned horizontally */
+    margin-left: 5px;  /* Small space between logo and dots */
+}
+
+.dot {
+    display: inline-block;
+    opacity: 0;
+    font-size: 32px; /* Adjust the font size of the dots */
+    animation: jumpDots 1.5s infinite;
+}
+
+/* Dot Animation */
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes jumpDots {
+    0%, 100% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(-5px); /* Moves the dot up */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0); /* Dot back to original position */
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-5px); /* Moves the dot up again */
+    }
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10%;
+    background: linear-gradient(135deg, #222, #333); /* Soft gradient background */
+    flex-wrap: wrap; /* Allow elements to wrap on small screens */
+}
+.hero .content {
+    max-width: 600px;
+    margin-bottom: 30px; /* Added margin for spacing on mobile */
+}
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.hero .highlight {
+    color: #4CAF50; /* Accent color */
+    font-weight: bold;
+}
+.hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.cv-btn {
+    background-color: #4CAF50; /* Accent color for buttons */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.cv-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.hero .image-container img {
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Container for Contact and Social Media */
+.social-media-container {
+    flex: wrap;
+    margin-top: 30px; /* Space above the container */
+    text-align: center;
+}
+
+.social-media-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Text color matching the theme */
+    
+}
+
+/* Social Media Icons */
+.social-media-container .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #444; /* Circle background color */
+    color: #fff; /* Icon color */
+    font-size: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-media-container .social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    background-color: #4CAF50; /* Highlighted color on hover */
+}
+
+/* Individual Colors for Each Icon */
+.social-icon.facebook {
+    background-color: #4267B2;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Instagram gradient */
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5;
+}
+
+.social-icon.github {
+    background-color: #333;
+}
+
+
+
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .social-media-container .social-icon {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* Contact Information Styles */
+.contact-info {
+    flex: 1; /* Allows contact info to take available space */
+    text-align: left; /* Align contact info text to the left */
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #222;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+
+
+/* Services Section */
+#services {
+    padding: 50px 10%;
+    background-color: #2c2c2c; /* Slightly lighter background for contrast */
+}
+#services h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #4CAF50; /* Matching the accent color */
+}
+.service {
+    background-color: #444;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.service h3 {
+    color: #4CAF50;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Resume Section */
+#resume {
+    display: none;
+    padding: 50px 10%;
+    background-color: #333; /* Lighter background to differentiate */
+    text-align: center;
+}
+#resume h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #4CAF50;
+}
+#resume p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 50px 10%;
+    background: linear-gradient(135deg, #222, #333); /* Soft gradient background */
+    text-align: center;
+}
+#portfolio h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #4CAF50;
+}
+#portfolio p {
+    font-size: 18px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 10%;
+    background-color: #333;
+    text-align: center;
+}
+#contact h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #4CAF50;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+label {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #444; /* Adding subtle border to inputs */
+    border-radius: 5px;
+    background-color: #222; /* Dark background for inputs */
+    color: #f5f5f5; /* Text color inside inputs */
+}
+textarea {
+    resize: none;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Contact Information Styles */
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px 10%;
+    background-color: #2c2c2c;
+    margin-top: 20px;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+}
+
+/* Left side (Location, Postal Code) */
+.contact-left {
+    text-align: left;
+    color: #fff;
+}
+
+.contact-left a {
+    color: #4CAF50;
+    margin: 5px 0;
+}
+
+.contact-left p strong {
+    color: #fff; /* Accent color for labels */
+}
+
+/* Right side (Phone, Email) */
+.contact-right {
+    text-align: left;
+    color: #fff;
+}
+
+.contact-right p {
+    margin: 5px 0;
+}
+
+.contact-right p strong {
+    color: #fff; /* Accent color for labels */
+}
+
+.contact-right a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.contact-right a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        text-align: left;
+    }
+    .contact-left, .contact-right {
+        flex: none;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    
+    
+
+  
+    .logo {
+         font-size: 20px; /* Adjust the font size for logo */
+    }
+
+}
+   
+
+
+
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 20px 0;
+    background-color: #111;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero .content {
+        max-width: 100%;
+    }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero h2 {
+        font-size: 24px;
+    }
+    .hero .image-container img {
+        width: 200px;
+    }
+
+    /* Services Section */
+    #services {
+        padding: 30px 10%;
+    }
+    .service {
+        margin: 20px 0;
+    }
+
+    /* Resume Section */
+    #resume {
+        padding: 30px 10%;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+        padding: 30px 10%;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding: 30px 10%;
+    }
+
+    /* Form */
+    form {
+        width: 90%;
+    }
+    input, textarea {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 12px;
+    }
+}
+
+
+/* Nav Items for Desktop View */
+/* Hamburger Menu Button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #f39c12;
+    margin: 5px 20px;
+    transition: transform 1.2s ease, opacity 0.3s ease;
+}
+
+/* Navigation Links */
+.nav-items {
+    display: flex;
+    list-style: none;
+}
+
+.nav-items li {
+    margin-left: 1.5rem;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0.7rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-items a:hover {
+    color: #f39c12;
+    transform: translateY(-2px);
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* Hide Navigation Links Initially */
+    .nav-items {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 100%; /* Drop down from below the nav */
+        left: 0;
+        width: max-content;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-items.active {
+        display: flex; /* Show dropdown menu */
+        animation: dropdown 1.5s ease-in-out;
+    }
+
+    .nav-items li {
+        
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-items a {
+        display: block;
+        font-size: 1.2rem;
+        color: #f39c12;
+        padding: 0rem;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    .nav-items a:hover {
+        background-color: #444;
+        color: #fff;
+    }
+
+    /* Optional Hamburger Animation */
+    .navbar-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Keyframe for Smooth Dropdown Animation */
+    @keyframes dropdown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Active Link Style */
+.nav-items a.active {
+    color: #7fdb07;
+    
+    
+}
+ul#navbar.nav-items.active {
+    margin: 0px 0;
+    padding: 0 0 0 11px;
+}
+
+
+
+
+
+
+
+
+
