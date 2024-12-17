@@ -66,7 +66,7 @@
                     <span></span>
                     <span></span>
                 </div>
-            <ul>
+            <ul class="nav-items" id="navbar">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
@@ -225,11 +225,37 @@
 
     <script>
 
-        function toggleNavbar() {
-            const navLinks = document.querySelector('nav ul');
-            navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide the navbar
-        }
+function toggleNavbar() {
+    const navbar = document.querySelector(".nav-items");
+    const toggleButton = document.querySelector(".navbar-toggle");
 
+    navbar.classList.toggle("active");
+    toggleButton.classList.toggle("active");
+}
+
+
+    // Select all navigation links
+const navLinks = document.querySelectorAll('.nav-items a');
+
+// Function to handle the active class toggle
+function setActiveLink(event) {
+    // Remove the 'active' class from all links
+    navLinks.forEach((link) => link.classList.remove('active'));
+
+    // Add the 'active' class to the clicked link
+    event.target.classList.add('active');
+}
+
+// Attach click event listeners to each navigation link
+navLinks.forEach((link) => {
+    link.addEventListener('click', setActiveLink);
+});
+
+
+
+
+
+    
         document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', function () {
         // Remove 'active' class from all links

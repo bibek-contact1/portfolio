@@ -9,15 +9,20 @@ body {
 /* Navbar */
 header {
     background: #111; /* Slightly darker navbar */
-    padding: 0px 20px;
+    padding: 0px 00px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #333;
+    color: #fff;
+    
+    
 }
 
 
@@ -27,6 +32,7 @@ nav {
     color: #4CAF50;
     position: relative;
     display: inline-flex;
+    margin-left: 20px;
     align-items: center; /* Aligns the dots vertically with the logo */
 }
 
@@ -73,46 +79,6 @@ nav {
     }
 }
 
-
-
-
-
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-nav ul li a:hover, nav ul li a.active {
-    color: #4CAF50; /* Consistent hover effect with accent color */
-}
-
-
-
-
-
-/* Mobile Navbar */
-.navbar-toggle {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    height: 20px;
-    justify-content: center;
-    align-items: center;
-}
-.navbar-toggle span {
-    width: 10px;
-    height: 4px;
-    background-color: #fff;
-    transition: transform 0.3s, background-color 0.3s;
-}
 
 
 
@@ -447,34 +413,7 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    /* Hide the navigation items and show the hamburger icon */
-    nav ul {
-        display: none; /* Hide by default */
-        
-    }
-
-    /* Show hamburger icon on small screens */
-    .navbar-toggle {
-        display: flex; /* Display on mobile */
-    }
-    .navbar-toggle span {
-        width: 30px;
-        height: 4px;
-        background-color: #fff;
-        transition: transform 1.5s, background-color 1.5s;
-    }
     
-
-    nav ul.active {
-        display: flex; /* Show menu when active */
-    }
-
-    nav ul li a {
-        font-size: 20px;
-        padding: 10px;
-        text-align: center;
-    }
-
     /* Hero Section */
     .hero {
         flex-direction: column;
@@ -529,3 +468,134 @@ footer {
         font-size: 12px;
     }
 }
+
+
+/* Nav Items for Desktop View */
+/* Hamburger Menu Button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #f39c12;
+    margin: 5px 20px;
+    transition: transform 1.2s ease, opacity 0.3s ease;
+}
+
+/* Navigation Links */
+.nav-items {
+    display: flex;
+    list-style: none;
+}
+
+.nav-items li {
+    margin-left: 1.5rem;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0.7rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-items a:hover {
+    color: #f39c12;
+    transform: translateY(-2px);
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* Hide Navigation Links Initially */
+    .nav-items {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 100%; /* Drop down from below the nav */
+        left: 0;
+        width: max-content;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-items.active {
+        display: flex; /* Show dropdown menu */
+        animation: dropdown 1.5s ease-in-out;
+    }
+
+    .nav-items li {
+        
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-items a {
+        display: block;
+        font-size: 1.2rem;
+        color: #f39c12;
+        padding: 0rem;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    .nav-items a:hover {
+        background-color: #444;
+        color: #fff;
+    }
+
+    /* Optional Hamburger Animation */
+    .navbar-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Keyframe for Smooth Dropdown Animation */
+    @keyframes dropdown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Active Link Style */
+.nav-items a.active {
+    color: #7fdb07;
+    
+    
+}
+ul#navbar.nav-items.active {
+    margin: 0px 0;
+    padding: 0 0 0 11px;
+}
+
+
+
+
+
+
+
+
+
