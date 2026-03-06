@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 200'>
+  <defs><linearGradient id='lg' x1='0' x2='1'><stop offset='0%' stop-color='#22c55e'/><stop offset='100%' stop-color='#0f766e'/></linearGradient></defs>
+  <rect width='600' height='200' fill='url(#lg)' rx='18'/>
+  <text x='40' y='120' fill='white' font-size='58' font-family='sans-serif'>Bibek Sunar</text>
+</svg>

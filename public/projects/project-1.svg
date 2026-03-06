@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'>
+  <rect width='640' height='420' fill='#052e16'/>
+  <circle cx='140' cy='150' r='100' fill='#22c55e' opacity='0.45'/>
+  <rect x='220' y='100' width='300' height='220' rx='18' fill='#166534'/>
+  <text x='250' y='220' fill='white' font-size='36' font-family='sans-serif'>Campaign</text>
+</svg>

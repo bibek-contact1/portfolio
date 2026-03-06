@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'>
+  <rect width='640' height='420' fill='#172554'/>
+  <rect x='80' y='90' width='480' height='240' rx='20' fill='#1d4ed8'/>
+  <path d='M130 280 L220 190 L290 250 L390 140 L510 280' stroke='#bfdbfe' stroke-width='16' fill='none' stroke-linecap='round'/>
+  <text x='120' y='150' fill='white' font-size='34' font-family='sans-serif'>Sales Funnel</text>
+</svg>

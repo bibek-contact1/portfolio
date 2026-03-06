@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'>
+  <rect width='640' height='420' fill='#3f1d2e'/>
+  <rect x='120' y='70' width='400' height='280' rx='22' fill='#9d174d'/>
+  <circle cx='220' cy='170' r='36' fill='#fbcfe8'/>
+  <rect x='280' y='150' width='180' height='20' rx='10' fill='#fbcfe8'/>
+  <rect x='180' y='230' width='280' height='18' rx='9' fill='#f9a8d4'/>
+  <text x='170' y='120' fill='white' font-size='32' font-family='sans-serif'>Internship</text>
+</svg>
