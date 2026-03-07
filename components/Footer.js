@@ -19,6 +19,7 @@ export default function Footer() {
             <Link href='/about-bibek-sunar' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>About</Link>
             <Link href='/projects' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Projects</Link>
             <Link href='/blog' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Blog</Link>
+            <Link href='/official-social-profiles' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Official Profiles</Link>
           </div>
         </div>
 
@@ -26,7 +27,7 @@ export default function Footer() {
           <a
             href='https://www.instagram.com/bibek.contact1'
             target='_blank'
-            rel='noopener noreferrer'
+            rel='me noopener'
             className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'
           >
             Instagram
@@ -34,7 +35,7 @@ export default function Footer() {
           <a
             href='https://facebook.com/bibek.contact1'
             target='_blank'
-            rel='noopener noreferrer'
+            rel='me noopener'
             className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'
           >
             Facebook
@@ -48,4 +49,3 @@ export default function Footer() {
     </footer>
   );
 }
-

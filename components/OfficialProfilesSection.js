@@ -24,7 +24,7 @@ export default function OfficialProfilesSection() {
           <a
             href='https://facebook.com/bibek.contact1'
             target='_blank'
-            rel='noopener noreferrer'
+            rel='me noopener'
             className='mt-3 inline-block text-brand-600 underline decoration-2 underline-offset-4 dark:text-brand-400'
           >
             facebook.com/bibek.contact1
@@ -39,7 +39,7 @@ export default function OfficialProfilesSection() {
           <a
             href='https://www.instagram.com/bibek.contact1'
             target='_blank'
-            rel='noopener noreferrer'
+            rel='me noopener'
             className='mt-3 inline-block text-brand-600 underline decoration-2 underline-offset-4 dark:text-brand-400'
           >
             instagram.com/bibek.contact1
