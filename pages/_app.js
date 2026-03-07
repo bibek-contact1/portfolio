@@ -8,6 +8,7 @@ import PageLoader from '@/components/PageLoader';
 
 const bodyFont = Manrope({ subsets: ['latin'], variable: '--font-body' });
 const headingFont = Sora({ subsets: ['latin'], variable: '--font-heading' });
+const HOME_SECTION_IDS = new Set(['home', 'about', 'skills', 'projects', 'vision', 'contact']);
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -17,20 +18,25 @@ export default function App({ Component, pageProps }) {
     const t = setTimeout(() => setLoading(false), 900);
     return () => clearTimeout(t);
   }, []);
+
   useEffect(() => {
     const parts = router.asPath.split('#');
     if (parts.length < 2) return;
 
     const id = decodeURIComponent(parts[1]);
+
+    if (router.pathname !== '/' && HOME_SECTION_IDS.has(id)) {
+      router.replace('/#' + id);
+      return;
+    }
+
     const timer = setTimeout(() => {
       const target = document.getElementById(id);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 120);
 
     return () => clearTimeout(timer);
-  }, [router.asPath]);
+  }, [router.asPath, router.pathname, router]);
 
   return (
     <ThemeProvider>
