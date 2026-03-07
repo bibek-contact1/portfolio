@@ -32,7 +32,7 @@ export default function Footer() {
             Instagram
           </a>
           <a
-            href='https://www.facebook.com/bibek.contact1/'
+            href='https://facebook.com/bibek.contact1'
             target='_blank'
             rel='noopener noreferrer'
             className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'
@@ -48,3 +48,4 @@ export default function Footer() {
     </footer>
   );
 }
+

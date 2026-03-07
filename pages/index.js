@@ -26,7 +26,7 @@ const personSchema = {
     addressCountry: 'NP'
   },
   sameAs: [
-    'https://www.facebook.com/bibek.contact1/',
+    'https://facebook.com/bibek.contact1',
     'https://www.instagram.com/bibek.contact1'
   ]
 };
@@ -74,3 +74,4 @@ export default function HomePage() {
     </>
   );
 }
+

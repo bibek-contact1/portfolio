@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { navLinks } from '@/utils/data';
@@ -9,7 +10,7 @@ export default function Navbar() {
   return (
     <header className='sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80'>
       <nav className='mx-auto flex max-w-6xl items-center justify-between px-6 py-4'>
-        <a href='#home' className='inline-flex items-center gap-3'>
+        <Link href='/#home' className='inline-flex items-center gap-3'>
           <Image
             src='/bibek.png'
             alt='Bibek Sunar logo'
@@ -18,13 +19,13 @@ export default function Navbar() {
             className='h-10 w-10 rounded-full border border-slate-200 object-cover dark:border-slate-700'
           />
           <span className='font-heading text-xl font-bold text-slate-900 dark:text-white'>Bibek Sunar</span>
-        </a>
+        </Link>
 
         <div className='hidden items-center gap-6 md:flex'>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className='text-sm font-medium text-slate-700 transition hover:text-brand-600 dark:text-slate-200 dark:hover:text-brand-400'>
+            <Link key={link.href} href={link.href} className='text-sm font-medium text-slate-700 transition hover:text-brand-600 dark:text-slate-200 dark:hover:text-brand-400'>
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
