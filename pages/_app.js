@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import { useEffect, useState } from 'react';
 import { Manrope, Sora } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from '@/utils/theme-context';
 import PageLoader from '@/components/PageLoader';
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
       <div className={[bodyFont.variable, headingFont.variable, 'font-body'].join(' ')}>
         <PageLoader show={loading} />
         <Component {...pageProps} />
+        <Analytics />
       </div>
     </ThemeProvider>
   );
