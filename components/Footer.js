@@ -16,9 +16,22 @@ export default function Footer() {
         </div>
 
         <div className='flex items-start gap-3'>
-          <a href='#' className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'>LinkedIn</a>
-          <a href='#' className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'>Instagram</a>
-          <a href='#' className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'>Facebook</a>
+          <a
+            href='https://www.instagram.com/bibek.contact1'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'
+          >
+            Instagram
+          </a>
+          <a
+            href='https://www.facebook.com/bibek.contact1/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300'
+          >
+            Facebook
+          </a>
         </div>
       </div>
 
