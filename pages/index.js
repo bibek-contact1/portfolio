@@ -5,7 +5,6 @@ import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import VisionSection from '@/components/VisionSection';
-import OfficialProfilesSection from '@/components/OfficialProfilesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
@@ -41,7 +40,7 @@ export default function HomePage() {
         <title>Bibek Sunar | Marketing Professional in Nepal</title>
         <meta
           name='description'
-          content='Bibek Sunar is a marketing professional and aspiring entrepreneur from Bharatpur-6, Nepal. Explore his portfolio, skills, projects, and official social profiles and contact details.'
+          content='Bibek Sunar is a marketing professional and aspiring entrepreneur from Bharatpur-6, Nepal. Explore his portfolio, skills, projects, and contact details.'
         />
         <meta
           name='keywords'
@@ -66,7 +65,6 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <OfficialProfilesSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
@@ -78,6 +76,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 

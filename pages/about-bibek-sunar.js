@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import OfficialProfilesSection from '@/components/OfficialProfilesSection';
 
 const url = 'https://bibeksunar.com.np/about-bibek-sunar';
 
@@ -23,8 +24,10 @@ export default function AboutBibekSunarPage() {
         <p className='mt-4 text-lg leading-relaxed text-slate-700 dark:text-slate-200'>
           Bibek Sunar is also an aspiring entrepreneur focused on creating impactful business ideas and long-term value through innovation and leadership.
         </p>
+              <OfficialProfilesSection />
       </main>
       <Footer />
     </>
   );
 }
+
