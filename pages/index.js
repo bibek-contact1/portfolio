@@ -5,6 +5,7 @@ import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import VisionSection from '@/components/VisionSection';
+import OfficialProfilesSection from '@/components/OfficialProfilesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
@@ -15,6 +16,8 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Bibek Sunar',
+  identifier: 'Bibek Sunar Official Portfolio',
+  mainEntityOfPage: siteUrl,
   url: siteUrl,
   image: siteUrl + '/bibek.png',
   jobTitle: 'Marketing Professional and Aspiring Entrepreneur',
@@ -67,6 +70,7 @@ export default function HomePage() {
         <SkillsSection />
         <ProjectsSection />
         <VisionSection />
+        <OfficialProfilesSection />
         <ContactSection />
       </main>
       <Footer />
@@ -74,4 +78,7 @@ export default function HomePage() {
     </>
   );
 }
+
+
+
 
