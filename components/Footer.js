@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -13,6 +15,11 @@ export default function Footer() {
           <p>Phone: +9779845900042</p>
           <p className='mt-1'>Email: bibek.contact1@gmail.com</p>
           <p className='mt-1'>Location: Bharatpur-6, Nepal</p>
+          <div className='mt-3 flex flex-wrap gap-3'>
+            <Link href='/about-bibek-sunar' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>About</Link>
+            <Link href='/projects' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Projects</Link>
+            <Link href='/blog' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Blog</Link>
+          </div>
         </div>
 
         <div className='flex items-start gap-3'>
