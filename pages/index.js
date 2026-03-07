@@ -41,7 +41,7 @@ export default function HomePage() {
         <title>Bibek Sunar | Marketing Professional in Nepal</title>
         <meta
           name='description'
-          content='Bibek Sunar is a marketing professional and aspiring entrepreneur from Bharatpur-6, Nepal. Explore his portfolio, skills, projects, and contact details.'
+          content='Bibek Sunar is a marketing professional and aspiring entrepreneur from Bharatpur-6, Nepal. Explore his portfolio, skills, projects, and official social profiles and contact details.'
         />
         <meta
           name='keywords'
@@ -66,11 +66,11 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <OfficialProfilesSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <VisionSection />
-        <OfficialProfilesSection />
         <ContactSection />
       </main>
       <Footer />
@@ -78,6 +78,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 
