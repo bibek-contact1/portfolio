@@ -1,9 +1,5 @@
 import { createPost, getAllPosts } from '@/lib/blog-store';
-
-function isAuthorized(req) {
-  const token = req.headers['x-admin-token'];
-  return Boolean(process.env.ADMIN_TOKEN) && token === process.env.ADMIN_TOKEN;
-}
+import { isAdminRequest } from '@/lib/admin-auth';
 
 export default async function handler(req, res) {
   try {
@@ -13,7 +9,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'POST') {
-      if (!isAuthorized(req)) {
+      if (!isAdminRequest(req)) {
         return res.status(401).json({ message: 'Unauthorized' });
       }
 
