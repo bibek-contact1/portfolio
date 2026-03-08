@@ -3,7 +3,8 @@ export const navLinks = [
   { label: 'Skills', href: '/#skills' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Vision', href: '/#vision' },
-  { label: 'Contact', href: '/#contact' }
+  { label: 'Contact', href: '/#contact' },
+  { label: 'Blog', href: '/blog' }
 ];
 
 export const skills = [
@@ -53,3 +54,4 @@ export const projects = [
     summary: 'Placeholder for internship achievements, responsibilities, and outcomes.'
   }
 ];
+
