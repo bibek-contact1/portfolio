@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Manrope, Sora } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/utils/theme-context';
 import PageLoader from '@/components/PageLoader';
 
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }) {
         <PageLoader show={loading} />
         <Component {...pageProps} />
         <Analytics />
+        <SpeedInsights />
       </div>
     </ThemeProvider>
   );
