@@ -1,19 +1,20 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
     <section id='home' className='relative overflow-hidden px-6 pb-24 pt-20'>
       <div className='hero-gradient pointer-events-none absolute inset-0' />
-      <div className='relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2'>
-        <div>
+      <div className='relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]'>
+        <div className='section-frame soft-grid'>
           <motion.p
             initial={{ y: 14, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className='mb-4 inline-flex rounded-full border border-brand-300 bg-brand-50 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-brand-700 dark:border-brand-900 dark:bg-brand-900/40 dark:text-brand-300'
+            className='eyebrow mb-4 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 shadow-sm ring-1 ring-brand-500/20 backdrop-blur dark:bg-slate-900/70'
           >
-            Marketing Professional | Aspiring Entrepreneur
+            <span className='h-2 w-2 rounded-full bg-brand-500 shadow-[0_0_0_6px_rgba(34,197,94,0.18)]' />
+            Marketing Professional • Entrepreneur in progress
           </motion.p>
 
           <motion.h1
@@ -23,8 +24,23 @@ export default function Hero() {
             transition={{ delay: 0.1 }}
             className='font-heading max-w-4xl text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white'
           >
-            Bibek Sunar
+            Bibek <span className='text-gradient'>Sunar</span>
           </motion.h1>
+
+          <motion.div
+            initial={{ y: 16, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16 }}
+            className='mt-4 flex flex-wrap gap-3 text-sm text-slate-600 dark:text-slate-300'
+          >
+            <span className='subtle-pill'>
+              Based in Bharatpur, Nepal
+            </span>
+            <span className='subtle-pill'>
+              Marketing • Sales • Digital Marketing
+            </span>
+          </motion.div>
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
@@ -50,6 +66,27 @@ export default function Hero() {
               About Me
             </a>
           </motion.div>
+
+          <div className='mt-10 grid gap-4 sm:grid-cols-2'>
+            <div className='glass-card flex items-start gap-3'>
+              <div className='h-10 w-10 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 text-white shadow-lg shadow-brand-500/30 flex items-center justify-center font-semibold'>
+                M
+              </div>
+              <div>
+                <p className='text-sm font-semibold text-slate-900 dark:text-white'>Marketing that converts</p>
+                <p className='mt-1 text-sm text-slate-600 dark:text-slate-300'>Obsessed with data-backed storytelling, funnels, and repeatable growth.</p>
+              </div>
+            </div>
+            <div className='glass-card flex items-start gap-3'>
+              <div className='h-10 w-10 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 text-white shadow-lg shadow-sky-500/30 flex items-center justify-center font-semibold'>
+                E
+              </div>
+              <div>
+                <p className='text-sm font-semibold text-slate-900 dark:text-white'>Entrepreneurial drive</p>
+                <p className='mt-1 text-sm text-slate-600 dark:text-slate-300'>Building and testing ideas that create value and real customer impact.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <motion.div
@@ -59,12 +96,12 @@ export default function Hero() {
           transition={{ delay: 0.2 }}
           className='mx-auto hidden w-full max-w-md lg:block'
         >
-          <div className='overflow-hidden rounded-3xl border border-white/30 bg-white/40 p-2 shadow-2xl backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/50'>
+          <div className='overflow-hidden rounded-3xl border border-white/30 bg-white/60 p-4 shadow-2xl backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/70'>
             <Image
-              src='/bibek.png'
-              alt='Bibek Sunar'
-              width={700}
-              height={850}
+              src='/bibek-sunar-portrait.jpg'
+              alt='Official portrait of Bibek Sunar, marketing professional from Nepal'
+              width={1200}
+              height={1800}
               priority
               className='h-auto w-full rounded-2xl object-cover'
             />

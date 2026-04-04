@@ -1,0 +1,9 @@
+﻿<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="200" rx="20" fill="#0F172A"/>
+  <rect x="30" y="70" width="260" height="80" rx="12" fill="#16A34A" fill-opacity="0.12" stroke="#22C55E" stroke-width="2"/>
+  <path d="M60 96H260" stroke="#22C55E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M60 118H210" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="255" cy="118" r="10" fill="#22C55E"/>
+  <rect x="120" y="36" width="80" height="18" rx="9" fill="#22C55E" fill-opacity="0.25"/>
+  <text x="160" y="50" text-anchor="middle" fill="#E2E8F0" font-family="Inter, Arial" font-size="12" font-weight="700">BANK OPS</text>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "name": "Bibek Sunar Portfolio",
+  "short_name": "Bibek Sunar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "description": "Portfolio of Bibek Sunar - Marketing Professional, Sales Enthusiast, and Aspiring Entrepreneur from Nepal.",
+  "icons": [
+    {
+      "src": "/bibek.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/bibek.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

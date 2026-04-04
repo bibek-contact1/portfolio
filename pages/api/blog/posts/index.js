@@ -13,12 +13,12 @@ export default async function handler(req, res) {
         return res.status(401).json({ message: 'Unauthorized' });
       }
 
-      const { title, excerpt, content, coverImage } = req.body || {};
+      const { title, excerpt, content, coverImage, category, tags } = req.body || {};
       if (!title || !content) {
         return res.status(400).json({ message: 'Title and content are required.' });
       }
 
-      const post = await createPost({ title, excerpt, content, coverImage });
+      const post = await createPost({ title, excerpt, content, coverImage, category, tags });
       return res.status(201).json({ post });
     }
 

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SeoHead from '@/components/SeoHead';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
@@ -8,18 +8,33 @@ import VisionSection from '@/components/VisionSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
-
-const siteUrl = 'https://bibeksunar.com.np';
+import { PERSON_IMAGE_ALT, PERSON_IMAGE_PATH, SITE_URL } from '@/utils/seo';
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Bibek Sunar',
+  givenName: 'Bibek',
+  familyName: 'Sunar',
+  alternateName: ['Bibek', 'bibeksunar', 'Bibek Sunar Nepal'],
   identifier: 'Bibek Sunar Official Portfolio',
-  mainEntityOfPage: siteUrl,
-  url: siteUrl,
-  image: siteUrl + '/bibek.png',
-  jobTitle: 'Marketing Professional and Aspiring Entrepreneur',
+  mainEntityOfPage: SITE_URL,
+  url: SITE_URL,
+  jobTitle: 'Marketing Professional, Sales Enthusiast, and Aspiring Entrepreneur',
+  description:
+    'Bibek Sunar is a marketing graduate from Nepal focused on marketing strategy, sales communication, digital marketing, and entrepreneurship.',
+  knowsAbout: [
+    'Marketing Strategy',
+    'Sales Communication',
+    'Digital Marketing',
+    'Business Development',
+    'Entrepreneurship',
+    'Leadership'
+  ],
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Bachelor of Business Administration (Marketing)'
+  },
   email: 'mailto:bibek.contact1@gmail.com',
   telephone: '+9779845900042',
   address: {
@@ -30,38 +45,71 @@ const personSchema = {
   sameAs: [
     'https://facebook.com/bibek.contact1',
     'https://www.instagram.com/bibek.contact1'
+  ],
+  image: {
+    '@type': 'ImageObject',
+    url: SITE_URL + PERSON_IMAGE_PATH,
+    caption: PERSON_IMAGE_ALT,
+    contentUrl: SITE_URL + PERSON_IMAGE_PATH,
+    thumbnailUrl: SITE_URL + PERSON_IMAGE_PATH,
+    name: 'Bibek Sunar official portrait',
+    creditText: 'Bibek Sunar',
+    representativeOfPage: true
+  },
+  subjectOf: [
+    SITE_URL + '/about-bibek-sunar',
+    SITE_URL + '/projects',
+    SITE_URL + '/official-social-profiles'
   ]
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Bibek Sunar Portfolio',
+  url: SITE_URL,
+  alternateName: ['Bibek Sunar Official Website', 'Bibek', 'bibeksunar'],
+  publisher: {
+    '@type': 'Person',
+    name: 'Bibek Sunar'
+  }
+};
+
+const imageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ImageObject',
+  url: SITE_URL + PERSON_IMAGE_PATH,
+  contentUrl: SITE_URL + PERSON_IMAGE_PATH,
+  caption: PERSON_IMAGE_ALT,
+  name: 'Bibek Sunar official portrait',
+  thumbnailUrl: SITE_URL + PERSON_IMAGE_PATH,
+  author: {
+    '@type': 'Person',
+    name: 'Bibek Sunar'
+  },
+  representativeOfPage: true
 };
 
 export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>Bibek Sunar | Marketing Professional in Nepal</title>
-        <meta
-          name='description'
-          content='Bibek Sunar is a marketing professional and aspiring entrepreneur from Bharatpur-6, Nepal. Explore his portfolio, skills, projects, and contact details.'
-        />
-        <meta
-          name='keywords'
-          content='Bibek Sunar, bibeksunar, marketing professional Nepal, sales communication, entrepreneurship, business development'
-        />
-        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-        <link rel='canonical' href={siteUrl} />
-        <meta property='og:title' content='Bibek Sunar | Marketing Professional in Nepal' />
-        <meta property='og:description' content='Portfolio of Bibek Sunar - marketing professional and aspiring entrepreneur from Nepal.' />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content={siteUrl} />
-        <meta property='og:image' content={siteUrl + '/bibek.png'} />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content='Bibek Sunar | Marketing Professional in Nepal' />
-        <meta name='twitter:description' content='Portfolio of Bibek Sunar - marketing professional and aspiring entrepreneur from Nepal.' />
-        <meta name='twitter:image' content={siteUrl + '/bibek.png'} />
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-        />
-      </Head>
+      <SeoHead
+        title='Bibek Sunar | Official Website of Bibek, Marketing Professional in Nepal'
+        description='Official website of Bibek Sunar from Bharatpur, Nepal. Bibek is a marketing graduate focused on marketing, sales, digital marketing, business development, and entrepreneurship.'
+        path='/'
+        keywords={[
+          'Bibek',
+          'Bibek website',
+          'Bibek image',
+          'BIBEK SUNAR',
+          'Bibek Sunar marketing',
+          'Bibek Sunar digital marketing',
+          'Bibek Sunar sales'
+        ]}
+        schema={[personSchema, websiteSchema, imageSchema]}
+        image={PERSON_IMAGE_PATH}
+        imageAlt={PERSON_IMAGE_ALT}
+      />
       <Navbar />
       <main>
         <Hero />

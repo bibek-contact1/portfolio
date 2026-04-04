@@ -36,22 +36,49 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'Brand Awareness Campaign',
-    type: 'Marketing Project',
-    image: '/projects/project-1.svg',
-    summary: 'Placeholder for a campaign focused on audience growth and conversion lift.'
+    title: 'Prime Commercial Bank Limited - Intern, Customer Support & Operations',
+    type: 'Internship | Banking | May-Jul 2024',
+    image: '/projects/bank.svg',
+    summary: 'Bharatpur Branch internship focused on customer support and frontline operations.',
+    bullets: [
+      'Resolved mobile banking and ATM card issues for customers.',
+      'Guided customers through forms and service requests.',
+      'Handled inquiries on products and services with clear communication.',
+      'Printed cheques and customer bank statements efficiently.'
+    ]
   },
   {
-    title: 'Startup Sales Funnel',
-    type: 'Business Idea',
-    image: '/projects/project-2.svg',
-    summary: 'Placeholder for a structured sales journey from lead acquisition to retention.'
+    title: 'Prasiddhi Trading - Marketing Assistant',
+    type: 'Marketing Role | 2022',
+    image: '/projects/trade.svg',
+    summary: 'Supported revenue growth through client management and on-ground market sensing.',
+    bullets: [
+      'Maintained strong relationships with existing clients and generated new leads.',
+      'Managed billing, order collection, and timely payment follow-ups.',
+      'Conducted market visits to monitor competitor activity and demand signals.'
+    ]
   },
   {
-    title: 'Internship Experience',
-    type: 'Professional Experience',
-    image: '/projects/project-3.svg',
-    summary: 'Placeholder for internship achievements, responsibilities, and outcomes.'
+    title: 'ISER-N - Field Interviewer',
+    type: 'Field Research | Jun-Oct 2025',
+    image: '/projects/research.svg',
+    summary: 'Interviewed respondents for social and environmental research projects across Nepal.',
+    bullets: [
+      'Built rapport and secured consent for structured interviews.',
+      'Conducted professional, systematic interviews and observations.',
+      'Recorded behavioural insights and delivered feedback to supervisors and project managers.'
+    ]
+  },
+  {
+    title: 'Entrepreneurial Concept Lab',
+    type: 'Personal Venture Exploration | Ongoing',
+    image: '/projects/lab.svg',
+    summary: 'Testing business ideas that blend marketing efficiency with customer-centric product design.',
+    bullets: [
+      'Running lean experiments to validate demand and pricing.',
+      'Designing funnels and messaging for early traction.',
+      'Documenting learnings to inform future venture launches.'
+    ]
   }
 ];
 

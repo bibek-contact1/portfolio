@@ -10,12 +10,12 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'PUT') {
-      const { title, excerpt, content, coverImage } = req.body || {};
+      const { title, excerpt, content, coverImage, category, tags } = req.body || {};
       if (!title || !content) {
         return res.status(400).json({ message: 'Title and content are required.' });
       }
 
-      const post = await updatePost(Number(id), { title, excerpt, content, coverImage });
+      const post = await updatePost(Number(id), { title, excerpt, content, coverImage, category, tags });
       if (!post) return res.status(404).json({ message: 'Post not found' });
       return res.status(200).json({ post });
     }

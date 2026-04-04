@@ -5,6 +5,7 @@ import { Manrope, Sora } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from '@/utils/theme-context';
 import PageLoader from '@/components/PageLoader';
+import RouteProgress from '@/components/RouteProgress';
 
 const bodyFont = Manrope({ subsets: ['latin'], variable: '--font-body' });
 const headingFont = Sora({ subsets: ['latin'], variable: '--font-heading' });
@@ -13,6 +14,7 @@ const HOME_SECTION_IDS = new Set(['home', 'about', 'skills', 'projects', 'vision
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [routeLoading, setRouteLoading] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 900);
@@ -38,13 +40,32 @@ export default function App({ Component, pageProps }) {
     return () => clearTimeout(timer);
   }, [router.asPath, router.pathname, router]);
 
+  useEffect(() => {
+    const onStart = () => setRouteLoading(true);
+    const onDone = () => setRouteLoading(false);
+
+    router.events.on('routeChangeStart', onStart);
+    router.events.on('routeChangeComplete', onDone);
+    router.events.on('routeChangeError', onDone);
+
+    return () => {
+      router.events.off('routeChangeStart', onStart);
+      router.events.off('routeChangeComplete', onDone);
+      router.events.off('routeChangeError', onDone);
+    };
+  }, [router.events]);
+
   return (
     <ThemeProvider>
-      <div className={[bodyFont.variable, headingFont.variable, 'font-body'].join(' ')}>
+      <div className={[bodyFont.variable, headingFont.variable, 'font-body', 'site-shell', 'body-sheen'].join(' ')}>
         <PageLoader show={loading} />
+        <RouteProgress show={routeLoading} />
         <Component {...pageProps} />
         <Analytics />
       </div>
     </ThemeProvider>
   );
 }
+
+
+

@@ -6,9 +6,14 @@ export default function handler(req, res) {
   }
 
   if (req.method === 'POST') {
-    const { token } = req.body || {};
-    if (!process.env.ADMIN_TOKEN || token !== process.env.ADMIN_TOKEN) {
-      return res.status(401).json({ message: 'Invalid admin token.' });
+    const { id, password, token } = req.body || {};
+    const useLoginPair = Boolean(process.env.ADMIN_LOGIN_ID && process.env.ADMIN_LOGIN_PASSWORD);
+
+    const validByPair = useLoginPair && id === process.env.ADMIN_LOGIN_ID && password === process.env.ADMIN_LOGIN_PASSWORD;
+    const validByToken = process.env.ADMIN_TOKEN && token === process.env.ADMIN_TOKEN;
+
+    if (!validByPair && !validByToken) {
+      return res.status(401).json({ message: 'Invalid credentials.' });
     }
     setSessionCookie(res);
     return res.status(200).json({ authenticated: true });

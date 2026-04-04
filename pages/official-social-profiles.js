@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SeoHead from '@/components/SeoHead';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -22,13 +22,13 @@ const profileSchema = {
 export default function OfficialSocialProfilesPage() {
   return (
     <>
-      <Head>
-        <title>Official Social Profiles | Bibek Sunar</title>
-        <meta name='description' content='Official social media profiles of Bibek Sunar. Facebook: facebook.com/bibek.contact1 and Instagram: instagram.com/bibek.contact1.' />
-        <meta name='robots' content='index, follow' />
-        <link rel='canonical' href={url} />
-        <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }} />
-      </Head>
+      <SeoHead
+        title='Official Social Profiles | Bibek Sunar'
+        description='Official social media profiles of Bibek Sunar. Facebook: facebook.com/bibek.contact1 and Instagram: instagram.com/bibek.contact1.'
+        path='/official-social-profiles'
+        keywords={['Bibek Sunar Facebook', 'Bibek Sunar Instagram', 'official Bibek Sunar profiles']}
+        schema={profileSchema}
+      />
       <Navbar />
       <main className='mx-auto max-w-4xl px-6 py-16'>
         <h1 className='font-heading text-4xl font-bold text-slate-900 dark:text-white'>Bibek Sunar Official Social Profiles</h1>

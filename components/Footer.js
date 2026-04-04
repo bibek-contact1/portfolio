@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='border-t border-slate-200 bg-white/80 px-6 py-10 dark:border-slate-800 dark:bg-slate-950/80'>
+    <footer className='mt-12 border-t border-slate-200 bg-gradient-to-br from-white via-white to-slate-50/70 px-6 py-12 dark:border-slate-800 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900/60'>
       <div className='mx-auto grid max-w-6xl gap-6 md:grid-cols-3'>
         <div>
           <p className='font-heading text-lg font-bold text-slate-900 dark:text-white'>Bibek Sunar</p>
@@ -17,7 +17,8 @@ export default function Footer() {
           <p className='mt-1'>Location: Bharatpur-6, Nepal</p>
           <div className='mt-3 flex flex-wrap gap-3'>
             <Link href='/about-bibek-sunar' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>About</Link>
-            <Link href='/projects' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Projects</Link>            <Link href='/official-social-profiles' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Official Profiles</Link>
+            <Link href='/projects' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Projects</Link>
+            <Link href='/official-social-profiles' className='text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400'>Official Profiles</Link>
           </div>
         </div>
 
