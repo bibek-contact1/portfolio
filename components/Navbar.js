@@ -28,6 +28,11 @@ export default function Navbar() {
     if (!sections.length) return undefined;
 
     const updateActiveSection = () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 12) {
+        setActiveId(sections[sections.length - 1].id);
+        return;
+      }
+
       if (window.scrollY + 120 < sections[0].offsetTop) {
         setActiveId('home');
         return;
@@ -58,20 +63,20 @@ export default function Navbar() {
   };
 
   return (
-    <header className='sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80'>
-      <nav className='mx-auto flex max-w-6xl items-center justify-between px-6 py-4'>
+    <header className='sticky top-3 z-50 mx-auto w-[calc(100%-1rem)] max-w-6xl rounded-xl border border-white/10 bg-[#114e61]/95 shadow-xl shadow-[#2b1b07]/15 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/90'>
+      <nav className='mx-auto flex items-center justify-between px-4 py-3 sm:px-5'>
         <Link href='/#home' className='inline-flex items-center gap-3'>
           <Image
             src='/bibek-sunar-portrait.jpg'
             alt='Bibek Sunar portrait logo'
             width={38}
             height={38}
-            className='h-10 w-10 rounded-full border border-slate-200 object-cover dark:border-slate-700'
+            className='h-9 w-9 rounded-full border-2 border-[#f5c766] object-cover dark:border-slate-700'
           />
-          <span className='font-heading text-xl font-bold text-slate-900 dark:text-white'>Bibek Sunar</span>
+          <span className='font-heading text-lg font-bold text-white'>Bibek Sunar</span>
         </Link>
 
-        <div className='hidden items-center gap-6 md:flex'>
+        <div className='hidden items-center gap-4 lg:gap-5 md:flex'>
           {navLinks.map((link) => {
             const active = isActive(link);
 
@@ -80,14 +85,14 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={[
-                  'relative py-2 text-sm font-medium transition duration-200 hover:scale-105 hover:text-brand-600 dark:hover:text-brand-400',
-                  active ? 'scale-110 text-brand-700 dark:text-brand-300' : 'text-slate-700 dark:text-slate-200'
+                  'relative py-2 text-[11px] font-bold uppercase tracking-wide transition duration-200 hover:scale-105 hover:text-[#f5c766] dark:hover:text-brand-400',
+                  active ? 'scale-110 text-[#f5c766]' : 'text-white/85'
                 ].join(' ')}
               >
                 {link.label}
                 <span
                   className={[
-                    'absolute inset-x-0 -bottom-0.5 h-0.5 origin-center rounded-full bg-brand-500 transition-transform duration-200',
+                    'absolute inset-x-0 -bottom-0.5 h-0.5 origin-center rounded-full bg-[#f5c766] transition-transform duration-200',
                     active ? 'scale-x-100' : 'scale-x-0'
                   ].join(' ')}
                 />
@@ -101,7 +106,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.96 }}
             type='button'
             onClick={toggleTheme}
-            className='rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-100 dark:hover:border-brand-400 dark:hover:text-brand-400'
+            className='rounded-full border border-white/20 px-3 py-1.5 text-xs font-bold text-white/90 transition hover:border-[#f5c766] hover:text-[#f5c766] dark:border-slate-700 dark:text-slate-100 dark:hover:border-brand-400 dark:hover:text-brand-400'
             aria-label='Toggle theme'
           >
             {ready ? (theme === 'dark' ? 'Light' : 'Dark') : 'Theme'}
@@ -110,7 +115,7 @@ export default function Navbar() {
 
         <button
           type='button'
-          className='inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 dark:border-slate-700 dark:text-slate-100 md:hidden'
+          className='inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 text-white dark:border-slate-700 dark:text-slate-100 md:hidden'
           aria-label='Open menu'
           aria-expanded={open}
           onClick={() => setOpen((prev) => !prev)}
@@ -128,7 +133,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className='border-t border-slate-200 bg-white px-6 py-4 dark:border-slate-800 dark:bg-slate-950 md:hidden'>
+        <div className='border-t border-white/10 bg-[#114e61] px-4 py-4 dark:border-slate-800 dark:bg-slate-950 md:hidden'>
           <div className='flex flex-col gap-3'>
             {navLinks.map((link) => (
               <Link
@@ -137,8 +142,8 @@ export default function Navbar() {
                 className={[
                   'rounded-xl px-3 py-2 text-sm font-medium transition hover:text-brand-600 dark:hover:text-brand-400',
                   isActive(link)
-                    ? 'bg-brand-50 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300'
-                    : 'text-slate-700 dark:text-slate-200'
+                    ? 'bg-white/10 text-[#f5c766] dark:bg-brand-900/30 dark:text-brand-300'
+                    : 'text-white/90 dark:text-slate-200'
                 ].join(' ')}
                 onClick={() => setOpen(false)}
               >
@@ -149,7 +154,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.96 }}
               type='button'
               onClick={toggleTheme}
-              className='mt-2 w-fit rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-100 dark:hover:border-brand-400 dark:hover:text-brand-400'
+              className='mt-2 w-fit rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-white transition hover:border-[#f5c766] hover:text-[#f5c766] dark:border-slate-700 dark:text-slate-100 dark:hover:border-brand-400 dark:hover:text-brand-400'
               aria-label='Toggle theme'
             >
               {ready ? (theme === 'dark' ? 'Light' : 'Dark') : 'Theme'}

@@ -3,8 +3,8 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import AchievementsSection from '@/components/AchievementsSection';
+import ExperienceSection from '@/components/ExperienceSection';
+import ProjectsAchievementsSection from '@/components/ProjectsAchievementsSection';
 import VisionSection from '@/components/VisionSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -121,8 +121,8 @@ export default function HomePage() {
         <Hero />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
-        <AchievementsSection />
+        <ExperienceSection />
+        <ProjectsAchievementsSection />
         <VisionSection />
         <ContactSection />
       </main>

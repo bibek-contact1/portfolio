@@ -1,14 +1,14 @@
 ﻿import SeoHead from '@/components/SeoHead';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { projects } from '@/utils/data';
+import { experiences } from '@/utils/data';
 
 const projectsSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Bibek Sunar Projects',
+  name: 'Bibek Sunar Experience',
   url: 'https://bibeksunar.com.np/projects',
-  description: 'Experience highlights for Bibek Sunar across Himurja Skincare, banking, marketing, research, and venture testing.'
+  description: 'Experience highlights for Bibek Sunar across banking, marketing, and field research.'
 };
 
 export default function ProjectsPage() {
@@ -16,23 +16,23 @@ export default function ProjectsPage() {
     <>
       <SeoHead
         title='Experience | Bibek Sunar'
-        description='Experience of Bibek Sunar across Himurja Skincare, banking operations, marketing assistance, field research, and venture experimentation.'
+        description='Experience of Bibek Sunar across banking operations, marketing assistance, and field research.'
         path='/projects'
-        keywords={['Bibek Sunar experience', 'Bibek Sunar projects', 'Himurja Skincare', 'Demo Day 7.0', 'marketing internship Nepal']}
+        keywords={['Bibek Sunar experience', 'banking internship Nepal', 'marketing assistant Nepal', 'field research Nepal']}
         schema={projectsSchema}
       />
       <Navbar />
       <main className='mx-auto max-w-5xl px-6 py-16 space-y-8'>
         <div>
           <p className='section-kicker'>Experience</p>
-          <h1 className='font-heading text-4xl font-bold text-slate-900 dark:text-white'>Projects & Experience</h1>
+          <h1 className='font-heading text-4xl font-bold text-slate-900 dark:text-white'>Experience</h1>
           <p className='mt-3 text-lg leading-relaxed text-slate-700 dark:text-slate-200'>
-            A concise view of my startup work, internships, roles, and venture experiments. Click any card to see responsibilities.
+            A concise view of my internships, professional roles, and field work. Click any card to see responsibilities.
           </p>
         </div>
 
         <div className='grid gap-6 md:grid-cols-2'>
-          {projects.map((item) => (
+          {experiences.map((item) => (
             <details key={item.title} className='glass-card group'>
               <summary className='flex cursor-pointer list-none items-start justify-between gap-3 text-left'>
                 <div>

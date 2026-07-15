@@ -1,8 +1,9 @@
 export const navLinks = [
+  { label: 'Home', href: '/#home' },
   { label: 'About', href: '/#about' },
   { label: 'Skills', href: '/#skills' },
-  { label: 'Projects', href: '/#projects' },
-  { label: 'Achievements', href: '/#achievements' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Projects & Achievements', href: '/#projects-achievements' },
   { label: 'Vision', href: '/#vision' },
   { label: 'Contact', href: '/#contact' },
   { label: 'Blog', href: '/blog' }
@@ -35,19 +36,7 @@ export const skills = [
   }
 ];
 
-export const projects = [
-  {
-    title: 'Himurja Skincare - Winner, Demo Day 7.0',
-    type: 'Startup Competition | Boston International College | 2026',
-    image: '/demo-day/himurja-winner-cheque.jpeg',
-    summary: 'Founder-led skincare startup recognized as the winner of Demo Day 7.0 at Boston International College.',
-    bullets: [
-      'Founded Himurja Skincare and led the startup pitch as Bibek Sunar, Founder.',
-      'Worked with Mahendra Parajuli as COO and Sachin Silwal as R&D Head.',
-      'Presented the venture in a competitive startup environment focused on validation, storytelling, and execution.',
-      'Won Demo Day 7.0 with a skincare concept built around practical customer needs and long-term brand trust.'
-    ]
-  },
+export const experiences = [
   {
     title: 'Prime Commercial Bank Limited - Intern, Customer Support & Operations',
     type: 'Internship | Banking | May-Jul 2024',
@@ -81,7 +70,10 @@ export const projects = [
       'Conducted professional, systematic interviews and observations.',
       'Recorded behavioural insights and delivered feedback to supervisors and project managers.'
     ]
-  },
+  }
+];
+
+export const projects = [
   {
     title: 'Himurja Skincare - Transparent & Traceable Skincare Venture',
     type: 'Startup Venture | Founder | Ongoing',
@@ -93,6 +85,21 @@ export const projects = [
       'Planning product transparency around raw material details, origin information, test reports, COA, COO, MSDS, TDS, and other supporting documents.',
       'Producing in low batch quantities so customers can use fresher products with better batch-level visibility.',
       'Working on the first product: Himurja Overnight Recovery Elixir.'
+    ]
+  }
+];
+
+export const achievements = [
+  {
+    title: 'Himurja Skincare - Winner, Demo Day 7.0',
+    type: 'Startup Competition | Boston International College | 2026',
+    image: '/demo-day/himurja-winner-cheque.jpeg',
+    summary: 'Founder-led skincare startup recognized as the winner of Demo Day 7.0 at Boston International College.',
+    bullets: [
+      'Founded Himurja Skincare and led the startup pitch as Bibek Sunar, Founder.',
+      'Worked with Mahendra Parajuli as COO and Sachin Silwal as R&D Head.',
+      'Presented the venture in a competitive startup environment focused on validation, storytelling, and execution.',
+      'Won Demo Day 7.0 with a skincare concept built around practical customer needs and long-term brand trust.'
     ]
   }
 ];
