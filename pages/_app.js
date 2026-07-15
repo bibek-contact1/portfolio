@@ -9,7 +9,7 @@ import RouteProgress from '@/components/RouteProgress';
 
 const bodyFont = Manrope({ subsets: ['latin'], variable: '--font-body' });
 const headingFont = Sora({ subsets: ['latin'], variable: '--font-heading' });
-const HOME_SECTION_IDS = new Set(['home', 'about', 'skills', 'projects', 'demo-day', 'vision', 'contact']);
+const HOME_SECTION_IDS = new Set(['home', 'about', 'skills', 'projects', 'achievements', 'vision', 'contact']);
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();

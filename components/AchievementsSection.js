@@ -30,16 +30,18 @@ const team = [
   { name: 'Sachin Silwal', role: 'R&D Head' }
 ];
 
-export default function DemoDaySection() {
+const demoDayVideoUrl = 'https://www.facebook.com/watch/?v=27847717814846963';
+
+export default function AchievementsSection() {
   return (
-    <section id='demo-day' className='mx-auto max-w-6xl px-6 py-20'>
+    <section id='achievements' className='mx-auto max-w-6xl px-6 py-20'>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className='section-kicker'
       >
-        Startup Win
+        Achievements
       </motion.p>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -50,7 +52,7 @@ export default function DemoDaySection() {
         Himurja Skincare at Demo Day 7.0
       </motion.h2>
       <p className='section-subtitle'>
-        A milestone from Boston International College where our startup team presented Himurja Skincare and won the Demo Day 7.0 startup competition.
+        A growing record of milestones, starting with our Demo Day 7.0 startup competition win at Boston International College.
       </p>
 
       <div className='mt-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]'>
@@ -88,6 +90,14 @@ export default function DemoDaySection() {
             <p className='text-base leading-relaxed text-slate-700 dark:text-slate-200'>
               Demo Day 7.0 at Boston International College brought startup ideas into a competitive pitch environment where teams shared their business models, market thinking, and execution plans. Himurja Skincare stood out as a promising venture and earned the winner title for the program.
             </p>
+            <a
+              href={demoDayVideoUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='mt-5 inline-flex rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-brand-700'
+            >
+              Watch Demo Day 7.0 Video
+            </a>
           </div>
 
           <div className='grid gap-4 sm:grid-cols-3'>

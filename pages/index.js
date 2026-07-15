@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import DemoDaySection from '@/components/DemoDaySection';
+import AchievementsSection from '@/components/AchievementsSection';
 import VisionSection from '@/components/VisionSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -122,7 +122,7 @@ export default function HomePage() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
-        <DemoDaySection />
+        <AchievementsSection />
         <VisionSection />
         <ContactSection />
       </main>
