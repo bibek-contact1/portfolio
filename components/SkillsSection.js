@@ -36,13 +36,13 @@ export default function SkillsSection() {
             >
               <div className='relative'>
                 <div className='flex items-center gap-3'>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#114e61] text-lg font-semibold text-[#f5c766] shadow-lg shadow-[#114e61]/20'>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0f766e] text-lg font-semibold text-white shadow-lg shadow-[#0f766e]/20'>
                     {skill.title.charAt(0)}
                   </div>
                   <h3 className='text-lg font-semibold text-slate-900 dark:text-white'>{skill.title}</h3>
                 </div>
                 <p className='mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300'>{skill.description}</p>
-                <div className='mt-5 h-1.5 w-10 rounded-full bg-[#dcc68d] transition-all duration-300 group-hover:w-20 group-hover:bg-[#114e61] dark:bg-slate-700' />
+                <div className='mt-5 h-1.5 w-10 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-20 group-hover:bg-[#0f766e] dark:bg-slate-700' />
               </div>
             </motion.article>
           ))}

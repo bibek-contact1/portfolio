@@ -7,7 +7,7 @@ export default function VisionSection() {
         initial={{ opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className='rounded-2xl bg-[#114e61] p-8 text-center text-white shadow-2xl shadow-[#2b1b07]/20 sm:p-10'
+        className='rounded-3xl bg-gradient-to-br from-[#0f766e] to-[#164e63] p-8 text-center text-white shadow-2xl shadow-[#0f766e]/20 sm:p-10'
       >
         <p className='text-[11px] font-bold uppercase tracking-[0.24em] text-[#f5c766]'>Entrepreneurship Vision</p>
         <h2 className='font-heading mt-4 text-3xl font-bold leading-tight sm:text-4xl'>

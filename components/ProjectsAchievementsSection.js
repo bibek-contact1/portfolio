@@ -58,7 +58,7 @@ export default function ProjectsAchievementsSection() {
         My current startup project and its first major achievement, kept together so the venture story is easy to follow.
       </p>
 
-      <div className='mt-8 overflow-hidden rounded-xl border border-[#dcc68d] bg-white/90 shadow-2xl shadow-[#2b1b07]/10 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 sm:mt-10'>
+      <div className='mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 sm:mt-10'>
         <div className='grid gap-0 lg:grid-cols-[0.92fr_1.08fr]'>
           <motion.article
             initial={{ opacity: 0, y: 24 }}
@@ -89,7 +89,7 @@ export default function ProjectsAchievementsSection() {
             transition={{ delay: 0.08 }}
             className='space-y-6 p-5 sm:p-7 lg:p-8'
           >
-            <div className='rounded-lg border border-[#dcc68d] bg-[#fff8e8] p-5 dark:border-brand-900/70 dark:bg-brand-900/20 sm:p-6'>
+            <div className='rounded-2xl border border-[#cce5dc] bg-[#effaf5] p-5 dark:border-brand-900/70 dark:bg-brand-900/20 sm:p-6'>
               <p className='eyebrow mb-3'>Current project</p>
               <h3 className='text-xl font-semibold text-slate-900 dark:text-white'>{currentProject.title}</h3>
               <p className='mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 sm:text-base'>{currentProject.summary}</p>
@@ -105,7 +105,7 @@ export default function ProjectsAchievementsSection() {
               )}
             </div>
 
-            <div className='rounded-lg border border-[#dcc68d] bg-white p-5 dark:border-slate-800 dark:bg-slate-950/40 sm:p-6'>
+            <div className='rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950/40 sm:p-6'>
               <p className='eyebrow mb-3'>Achievement</p>
               <h3 className='text-xl font-semibold text-slate-900 dark:text-white'>{demoDayAchievement.title}</h3>
               <p className='mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200 sm:text-base'>
@@ -115,7 +115,7 @@ export default function ProjectsAchievementsSection() {
                 href={demoDayVideoUrl}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#114e61] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#114e61]/20 transition hover:bg-[#0d3d4d] sm:w-auto'
+                className='mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#0f766e] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#0f766e]/20 transition hover:bg-[#115e59] sm:w-auto'
               >
                 Watch Demo Day 7.0 Video
               </a>
@@ -123,7 +123,7 @@ export default function ProjectsAchievementsSection() {
 
             <div className='grid gap-3 sm:grid-cols-3'>
               {team.map((member) => (
-                <div key={member.name} className='rounded-lg border border-[#dcc68d] bg-white/90 p-4 shadow-lg shadow-[#2b1b07]/5 dark:border-slate-800 dark:bg-slate-900/80'>
+                <div key={member.name} className='rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-lg shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/80'>
                   <p className='text-sm font-semibold text-slate-900 dark:text-white'>{member.name}</p>
                   <p className='mt-1 text-xs font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-300'>{member.role}</p>
                 </div>
@@ -132,7 +132,7 @@ export default function ProjectsAchievementsSection() {
 
             <div className='grid gap-4 sm:grid-cols-2'>
               {gallery.map((image) => (
-                <figure key={image.src} className='group overflow-hidden rounded-lg border border-[#dcc68d] bg-white shadow-lg shadow-[#2b1b07]/5 dark:border-slate-800 dark:bg-slate-900'>
+                <figure key={image.src} className='group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900'>
                   <div className='relative aspect-[16/10] overflow-hidden'>
                     <Image
                       src={image.src}

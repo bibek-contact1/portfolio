@@ -37,7 +37,7 @@ export default function ExperienceSection() {
               key={project.title}
               transition={{ delay: index * 0.04 }}
               whileHover={{ y: -8 }}
-              className='group overflow-hidden rounded-lg border border-[#dcc68d] bg-white shadow-lg shadow-[#2b1b07]/10 transition duration-300 hover:-translate-y-1 hover:border-[#b98423] hover:shadow-2xl hover:shadow-[#2b1b07]/15 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700'
+              className='group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:border-[#0f766e]/50 hover:shadow-2xl hover:shadow-[#0f766e]/10 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700'
             >
               <div className='relative overflow-hidden'>
                 <Image
@@ -50,7 +50,7 @@ export default function ExperienceSection() {
                 <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/45 via-slate-900/0 to-transparent opacity-90' />
               </div>
               <div className='p-5'>
-                <p className='text-xs font-bold uppercase tracking-wide text-[#b98423] dark:text-brand-400'>{project.type}</p>
+                <p className='text-xs font-bold uppercase tracking-wide text-[#0f766e] dark:text-brand-400'>{project.type}</p>
                 <h3 className='mt-2 text-lg font-semibold text-slate-900 transition-colors group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400'>
                   {project.title}
                 </h3>

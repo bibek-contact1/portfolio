@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='mt-12 bg-[#114e61] px-6 py-12 text-white dark:border-slate-800 dark:bg-slate-950'>
+    <footer className='mt-12 bg-slate-950 px-6 py-12 text-white dark:border-slate-800 dark:bg-slate-950'>
       <div className='mx-auto grid max-w-6xl gap-6 md:grid-cols-3'>
         <div>
           <p className='font-heading text-lg font-bold text-white'>Bibek Sunar</p>
