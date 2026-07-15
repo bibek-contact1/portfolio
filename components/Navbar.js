@@ -1,13 +1,61 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { navLinks } from '@/utils/data';
 import { useTheme } from '@/utils/theme-context';
 
 export default function Navbar() {
   const { theme, toggleTheme, ready } = useTheme();
   const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState('home');
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname !== '/') {
+      setActiveId('');
+      return undefined;
+    }
+
+    const sectionIds = navLinks
+      .map((link) => link.href.split('#')[1])
+      .filter(Boolean);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return undefined;
+
+    const updateActiveSection = () => {
+      if (window.scrollY + 120 < sections[0].offsetTop) {
+        setActiveId('home');
+        return;
+      }
+
+      const marker = window.scrollY + Math.min(window.innerHeight * 0.38, 360);
+      const current = sections.reduce((active, section) => {
+        if (section.offsetTop <= marker) return section;
+        return active;
+      }, sections[0]);
+
+      setActiveId(current.id);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, [router.pathname]);
+
+  const isActive = (link) => {
+    if (link.href.startsWith('/#')) return router.pathname === '/' && activeId === link.href.slice(2);
+    return router.pathname === link.href || router.pathname.startsWith(link.href + '/');
+  };
 
   return (
     <header className='sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80'>
@@ -24,11 +72,28 @@ export default function Navbar() {
         </Link>
 
         <div className='hidden items-center gap-6 md:flex'>
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className='text-sm font-medium text-slate-700 transition hover:text-brand-600 dark:text-slate-200 dark:hover:text-brand-400'>
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActive(link);
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={[
+                  'relative py-2 text-sm font-medium transition duration-200 hover:scale-105 hover:text-brand-600 dark:hover:text-brand-400',
+                  active ? 'scale-110 text-brand-700 dark:text-brand-300' : 'text-slate-700 dark:text-slate-200'
+                ].join(' ')}
+              >
+                {link.label}
+                <span
+                  className={[
+                    'absolute inset-x-0 -bottom-0.5 h-0.5 origin-center rounded-full bg-brand-500 transition-transform duration-200',
+                    active ? 'scale-x-100' : 'scale-x-0'
+                  ].join(' ')}
+                />
+              </Link>
+            );
+          })}
         </div>
 
         <div className='hidden md:block'>
@@ -69,7 +134,12 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className='text-sm font-medium text-slate-700 transition hover:text-brand-600 dark:text-slate-200 dark:hover:text-brand-400'
+                className={[
+                  'rounded-xl px-3 py-2 text-sm font-medium transition hover:text-brand-600 dark:hover:text-brand-400',
+                  isActive(link)
+                    ? 'bg-brand-50 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300'
+                    : 'text-slate-700 dark:text-slate-200'
+                ].join(' ')}
                 onClick={() => setOpen(false)}
               >
                 {link.label}

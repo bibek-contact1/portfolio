@@ -83,14 +83,16 @@ export const projects = [
     ]
   },
   {
-    title: 'Entrepreneurial Concept Lab',
-    type: 'Personal Venture Exploration | Ongoing',
-    image: '/projects/lab.svg',
-    summary: 'Testing business ideas that blend marketing efficiency with customer-centric product design.',
+    title: 'Himurja Skincare - Transparent & Traceable Skincare Venture',
+    type: 'Startup Venture | Founder | Ongoing',
+    image: '/demo-day/himurja-winner-cheque.jpeg',
+    summary: 'Building a low-batch botanical skincare brand focused on transparent sourcing, traceable product information, and recovery-supporting formulas.',
     bullets: [
-      'Running lean experiments to validate demand and pricing.',
-      'Designing funnels and messaging for early traction.',
-      'Documenting learnings to inform future venture launches.'
+      'Developing Himurja Skincare around transparent and traceable skincare, so customers can understand what is inside each product and where key inputs come from.',
+      'Formulating with botanical ingredients only, with a focus on supporting skin recovery and repair.',
+      'Planning product transparency around raw material details, origin information, test reports, COA, COO, MSDS, TDS, and other supporting documents.',
+      'Producing in low batch quantities so customers can use fresher products with better batch-level visibility.',
+      'Working on the first product: Himurja Overnight Recovery Elixir.'
     ]
   }
 ];
