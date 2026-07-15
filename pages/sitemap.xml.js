@@ -36,7 +36,20 @@ export async function getServerSideProps({ res }) {
     caption: PERSON_IMAGE_ALT
   };
   const staticUrls = [
-    { loc: SITE_URL + '/', lastmod: today, changefreq: 'weekly', priority: '1.0', images: [portraitImage] },
+    {
+      loc: SITE_URL + '/',
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '1.0',
+      images: [
+        portraitImage,
+        {
+          loc: SITE_URL + '/demo-day/winner-trophy-with-bibek.jpeg',
+          title: 'Himurja Skincare Demo Day 7.0 winner',
+          caption: 'Bibek Sunar and Himurja Skincare winning Demo Day 7.0 at Boston International College'
+        }
+      ]
+    },
     { loc: SITE_URL + '/about-bibek-sunar', lastmod: today, changefreq: 'monthly', priority: '0.9', images: [portraitImage] },
     { loc: SITE_URL + '/projects', lastmod: today, changefreq: 'monthly', priority: '0.9' },
     { loc: SITE_URL + '/blog', lastmod: today, changefreq: 'weekly', priority: '0.9' },

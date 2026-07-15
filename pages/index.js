@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import DemoDaySection from '@/components/DemoDaySection';
 import VisionSection from '@/components/VisionSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -22,13 +23,15 @@ const personSchema = {
   url: SITE_URL,
   jobTitle: 'Marketing Professional, Sales Enthusiast, and Aspiring Entrepreneur',
   description:
-    'Bibek Sunar is a marketing graduate from Nepal focused on marketing strategy, sales communication, digital marketing, and entrepreneurship.',
+    'Bibek Sunar is a marketing graduate from Nepal focused on marketing strategy, sales communication, digital marketing, entrepreneurship, and Himurja Skincare.',
   knowsAbout: [
     'Marketing Strategy',
     'Sales Communication',
     'Digital Marketing',
     'Business Development',
     'Entrepreneurship',
+    'Himurja Skincare',
+    'Startup Pitching',
     'Leadership'
   ],
   alumniOf: {
@@ -104,7 +107,10 @@ export default function HomePage() {
           'BIBEK SUNAR',
           'Bibek Sunar marketing',
           'Bibek Sunar digital marketing',
-          'Bibek Sunar sales'
+          'Bibek Sunar sales',
+          'Himurja Skincare',
+          'Demo Day 7.0 Boston International College',
+          'Bibek Sunar startup'
         ]}
         schema={[personSchema, websiteSchema, imageSchema]}
         image={PERSON_IMAGE_PATH}
@@ -116,6 +122,7 @@ export default function HomePage() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <DemoDaySection />
         <VisionSection />
         <ContactSection />
       </main>

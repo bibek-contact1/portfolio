@@ -8,7 +8,7 @@ const projectsSchema = {
   '@type': 'CollectionPage',
   name: 'Bibek Sunar Projects',
   url: 'https://bibeksunar.com.np/projects',
-  description: 'Experience highlights for Bibek Sunar across banking, marketing, research, and venture testing.'
+  description: 'Experience highlights for Bibek Sunar across Himurja Skincare, banking, marketing, research, and venture testing.'
 };
 
 export default function ProjectsPage() {
@@ -16,9 +16,9 @@ export default function ProjectsPage() {
     <>
       <SeoHead
         title='Experience | Bibek Sunar'
-        description='Experience of Bibek Sunar across banking operations, marketing assistance, field research, and venture experimentation.'
+        description='Experience of Bibek Sunar across Himurja Skincare, banking operations, marketing assistance, field research, and venture experimentation.'
         path='/projects'
-        keywords={['Bibek Sunar experience', 'Bibek Sunar projects', 'marketing internship Nepal']}
+        keywords={['Bibek Sunar experience', 'Bibek Sunar projects', 'Himurja Skincare', 'Demo Day 7.0', 'marketing internship Nepal']}
         schema={projectsSchema}
       />
       <Navbar />
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
           <p className='section-kicker'>Experience</p>
           <h1 className='font-heading text-4xl font-bold text-slate-900 dark:text-white'>Projects & Experience</h1>
           <p className='mt-3 text-lg leading-relaxed text-slate-700 dark:text-slate-200'>
-            A concise view of my internships, roles, and venture experiments. Click any card to see responsibilities.
+            A concise view of my startup work, internships, roles, and venture experiments. Click any card to see responsibilities.
           </p>
         </div>
 
